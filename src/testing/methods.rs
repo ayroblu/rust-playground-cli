@@ -1,14 +1,16 @@
+// https://doc.rust-lang.org/rustdoc/documentation-tests.html
+
 pub fn show_testing() {
     println!("add_one(3) == {}", add_one(3));
     println!("Consider also running cargo test, you can play around with the code in the comment");
 }
 
 /// Adds one to the number given.
-/// Doesn't actually test cause not lib: https://github.com/rust-lang/rust/issues/50784
 ///
 /// # Examples
 ///
 /// ```
+/// use librustplaygroundcli::testing::methods::add_one;
 /// let arg = 5;
 /// let answer = add_one(arg);
 ///
