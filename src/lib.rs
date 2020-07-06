@@ -1,4 +1,14 @@
-// https://github.com/clap-rs/clap/blob/master/examples/20_subcommands.rs
+//! # Rust Playground CLI
+//!
+//! `rust-playground-cli` is an exploration of the rust language as a learning exercise. This crate
+//! will follow a similar structure to "rust by example", so you should be able to translate
+//! between the two fairly easily
+//!
+//! The CLI part of this app is built with the clap crate, with code examples taken from [their
+//! examples](https://github.com/clap-rs/clap/blob/master/examples/20_subcommands.rs)
+//!
+//! Note that this style of comment explains the enclosing scope, i.e. the crate
+
 use clap::ArgMatches;
 
 mod cli;
@@ -24,8 +34,6 @@ pub fn run_cli() {
 }
 
 fn handle_matches(matches: ArgMatches) {
-    // The most common way to handle subcommands is via a combined approach using
-    // `ArgMatches::subcommand` which returns a tuple of both the name and matches
     let (cmd, matches_opt) = matches.subcommand();
     let subcmd_matches = (MainCommands::from_str(cmd).unwrap(), matches_opt);
 

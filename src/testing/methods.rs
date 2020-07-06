@@ -1,9 +1,9 @@
-// https://doc.rust-lang.org/rustdoc/documentation-tests.html
-
 pub fn show_testing() {
     println!("add_one(3) == {}", add_one(3));
     println!("Consider also running cargo test, you can play around with the code in the comment");
 }
+
+// https://doc.rust-lang.org/rustdoc/documentation-tests.html
 
 /// Adds one to the number given.
 ///
