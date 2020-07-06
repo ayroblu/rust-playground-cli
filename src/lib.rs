@@ -12,8 +12,9 @@
 use clap::ArgMatches;
 
 mod cli;
+pub mod custom_types;
 pub mod format_print;
-pub mod structs;
+pub mod primitives;
 pub mod testing;
 mod types;
 
@@ -39,8 +40,9 @@ fn handle_matches(matches: ArgMatches) {
 
     match subcmd_matches {
         (MainCommands::FormatPrint, _) => format_print::methods::show_print(),
+        (MainCommands::Primitives, _) => primitives::methods::show_primitives(),
+        (MainCommands::CustomTypes, _) => custom_types::methods::show_custom_types(),
         (MainCommands::Testing, _) => testing::methods::show_testing(),
-        (MainCommands::Structs, _) => structs::methods::show_struct(),
         (MainCommands::GenCompletions, Some(sub_matches)) => cli::gen_completions(sub_matches),
         // If all subcommands are defined above, anything else is unreachabe!()
         (_, None) => unreachable!(),

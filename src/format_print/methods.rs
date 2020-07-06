@@ -104,4 +104,22 @@ pub fn show_print() {
     // println!("This struct `{}` won't print...", Some(3));
     println!("\n# Escaping");
     println!("{{ Hello }}");
+
+    println!("{:?}", DebugPrintable(23));
+    println!("{}", Printable(23));
+}
+
+// Need atleast this to debug it. feels like you'd do it for all structs?
+#[derive(Debug)]
+struct DebugPrintable(i32);
+
+/// This structure you can print with "{}"
+#[derive(Debug)]
+struct Printable(i32);
+
+// Note the docs for Display show the function signature
+impl std::fmt::Display for Printable {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+        write!(f, "P{}", self.0)
+    }
 }

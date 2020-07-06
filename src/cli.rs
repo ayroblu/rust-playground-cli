@@ -8,8 +8,9 @@ pub fn build_cli_app() -> App<'static, 'static> {
         .version("1.0.1")
         .setting(AppSettings::SubcommandRequiredElseHelp)
         .subcommand(App::new(MainCommands::FormatPrint.as_str()).about("demos print formatting"))
+        .subcommand(App::new(MainCommands::Primitives.as_str()).about("demos primitives"))
+        .subcommand(App::new(MainCommands::CustomTypes.as_str()).about("demos custom types"))
         .subcommand(App::new(MainCommands::Testing.as_str()).about("demos testing"))
-        .subcommand(App::new(MainCommands::Structs.as_str()).about("demos structs"))
         .subcommand(
             App::new(MainCommands::GenCompletions.as_str())
                 .about("get completions")
