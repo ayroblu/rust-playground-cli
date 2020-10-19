@@ -52,9 +52,36 @@ struct Point {
     y: f32,
 }
 
+// ---------------------------- enums here
 fn show_enums() {
-    println!("Hi");
+    println!("\n## Enums here");
+    let event = WebEvent::PageLoad;
+    // Exhaustive matching
+    match event {
+        WebEvent::PageLoad => println!("page loaded"),
+        WebEvent::PageUnload => println!("page unloaded"),
+        // Destructure `c` from inside the `enum`.
+        WebEvent::KeyPress(c) => println!("pressed '{}'.", c),
+        WebEvent::Paste(s) => println!("pasted \"{}\".", s),
+        // Destructure `Click` into `x` and `y`.
+        WebEvent::Click { x, y } => {
+            println!("clicked at x={}, y={}.", x, y);
+        }
+    }
 }
+#[derive(Debug)]
+pub enum WebEvent {
+    // An `enum` may either be `unit-like`,
+    PageLoad,
+    PageUnload,
+    // like tuple structs,
+    KeyPress(char),
+    Paste(String),
+    // or c-like structures.
+    Click { x: i64, y: i64 },
+}
+
+// ---------------------------- constants here
 fn show_constants() {
-    println!("Hi");
+    println!("\n## Constants here");
 }

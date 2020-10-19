@@ -11,6 +11,7 @@ pub fn build_cli_app() -> App<'static, 'static> {
         .subcommand(App::new(MainCommands::Primitives.as_str()).about("demos primitives"))
         .subcommand(App::new(MainCommands::CustomTypes.as_str()).about("demos custom types"))
         .subcommand(App::new(MainCommands::Testing.as_str()).about("demos testing"))
+        .subcommand(App::new(MainCommands::BorrowChecker.as_str()).about("demos borrow checker"))
         .subcommand(
             App::new(MainCommands::GenCompletions.as_str())
                 .about("get completions")

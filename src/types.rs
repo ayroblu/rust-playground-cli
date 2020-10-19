@@ -4,6 +4,7 @@ pub enum MainCommands {
     Primitives,
     CustomTypes,
     Testing,
+    BorrowChecker,
     GenCompletions,
 }
 
@@ -14,6 +15,7 @@ impl MainCommands {
             "primitives" => Some(MainCommands::Primitives),
             "custom-types" => Some(MainCommands::CustomTypes),
             "testing" => Some(MainCommands::Testing),
+            "borrow-checker" => Some(MainCommands::BorrowChecker),
             "gen-completions" => Some(MainCommands::GenCompletions),
             _ => None,
         }
@@ -25,6 +27,7 @@ impl MainCommands {
             MainCommands::Primitives => "primitives",
             MainCommands::CustomTypes => "custom-types",
             MainCommands::Testing => "testing",
+            MainCommands::BorrowChecker => "borrow-checker",
             MainCommands::GenCompletions => "gen-completions",
         }
     }
