@@ -11,12 +11,8 @@
 
 use clap::ArgMatches;
 
-pub mod borrow_checker;
 mod cli;
-pub mod custom_types;
-pub mod format_print;
-pub mod primitives;
-pub mod testing;
+pub mod modules;
 mod types;
 
 use types::MainCommands;
@@ -40,11 +36,11 @@ fn handle_matches(matches: ArgMatches) {
     let subcmd_matches = (MainCommands::from_str(cmd).unwrap(), matches_opt);
 
     match subcmd_matches {
-        (MainCommands::FormatPrint, _) => format_print::methods::show_print(),
-        (MainCommands::Primitives, _) => primitives::methods::show_primitives(),
-        (MainCommands::CustomTypes, _) => custom_types::methods::show_custom_types(),
-        (MainCommands::Testing, _) => testing::methods::show_testing(),
-        (MainCommands::BorrowChecker, _) => borrow_checker::methods::show_borrow_checker(),
+        (MainCommands::FormatPrint, _) => modules::format_print::show_print(),
+        (MainCommands::Primitives, _) => modules::primitives::show_primitives(),
+        (MainCommands::CustomTypes, _) => modules::custom_types::show_custom_types(),
+        (MainCommands::Testing, _) => modules::testing::show_testing(),
+        (MainCommands::BorrowChecker, _) => modules::borrow_checker::show_borrow_checker(),
         (MainCommands::GenCompletions, Some(sub_matches)) => cli::gen_completions(sub_matches),
         // If all subcommands are defined above, anything else is unreachabe!()
         (_, None) => unreachable!(),

@@ -84,4 +84,15 @@ pub enum WebEvent {
 // ---------------------------- constants here
 fn show_constants() {
     println!("\n## Constants here");
+    // Can be defined in any scope including global
+    static LANGUAGE: &str = "Rust";
+    const THRESHOLD: i32 = 20;
+    println!(
+        "Constants are straight forward: {}. Don't try and change them, must have explicit types",
+        THRESHOLD
+    );
+    println!(
+        "Statics have inferred 'static lifetime. `mut` are unsafe: {}",
+        LANGUAGE
+    )
 }

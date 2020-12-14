@@ -81,4 +81,13 @@ pub fn show_primitives() {
     println!("0011 XOR 0101 is {:04b}", 0b0011u32 ^ 0b0101);
     println!("1 << 5 is {}", 1u32 << 5);
     println!("0x80 >> 2 is 0x{:x}", 0x80u32 >> 2);
+
+    println!("\nCasting");
+    let decimal = 65.8321_f32;
+    let integer = decimal as u8;
+    let character = integer as char;
+    println!("Casting: {} -> {} -> {}", decimal, integer, character);
+    // Not allowed
+    // println!("1000 as a u8 is : {}", 1000 as u8);
+    println!("  -1 as a u8 is : {}", (-1i8) as u8);
 }
