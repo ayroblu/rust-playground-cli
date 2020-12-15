@@ -13,6 +13,11 @@ pub fn build_cli_app() -> App<'static, 'static> {
         .subcommand(App::new(MainCommands::Testing.as_str()).about("demos testing"))
         .subcommand(App::new(MainCommands::BorrowChecker.as_str()).about("demos borrow checker"))
         .subcommand(
+            App::new(MainCommands::ConversionTraits.as_str()).about("demos conversion traits"),
+        )
+        .subcommand(App::new(MainCommands::ControlFlow.as_str()).about("demos control flow"))
+        .subcommand(App::new(MainCommands::Functions.as_str()).about("demos functions"))
+        .subcommand(
             App::new(MainCommands::GenCompletions.as_str())
                 .about("get completions")
                 .arg(

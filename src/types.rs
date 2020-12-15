@@ -5,6 +5,9 @@ pub enum MainCommands {
     CustomTypes,
     Testing,
     BorrowChecker,
+    ConversionTraits,
+    ControlFlow,
+    Functions,
     GenCompletions,
 }
 
@@ -16,6 +19,9 @@ impl MainCommands {
             "custom-types" => Some(MainCommands::CustomTypes),
             "testing" => Some(MainCommands::Testing),
             "borrow-checker" => Some(MainCommands::BorrowChecker),
+            "conversion-traits" => Some(MainCommands::ConversionTraits),
+            "control-flow" => Some(MainCommands::ControlFlow),
+            "functions" => Some(MainCommands::Functions),
             "gen-completions" => Some(MainCommands::GenCompletions),
             _ => None,
         }
@@ -28,8 +34,10 @@ impl MainCommands {
             MainCommands::CustomTypes => "custom-types",
             MainCommands::Testing => "testing",
             MainCommands::BorrowChecker => "borrow-checker",
+            MainCommands::ConversionTraits => "conversion-traits",
+            MainCommands::ControlFlow => "control-flow",
+            MainCommands::Functions => "functions",
             MainCommands::GenCompletions => "gen-completions",
         }
     }
 }
-

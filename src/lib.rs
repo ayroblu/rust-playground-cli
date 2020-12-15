@@ -41,6 +41,9 @@ fn handle_matches(matches: ArgMatches) {
         (MainCommands::CustomTypes, _) => modules::custom_types::show_custom_types(),
         (MainCommands::Testing, _) => modules::testing::show_testing(),
         (MainCommands::BorrowChecker, _) => modules::borrow_checker::show_borrow_checker(),
+        (MainCommands::ConversionTraits, _) => modules::conversion_traits::show_conversion_traits(),
+        (MainCommands::ControlFlow, _) => modules::control_flow::show_control_flow(),
+        (MainCommands::Functions, _) => modules::functions::show_functions(),
         (MainCommands::GenCompletions, Some(sub_matches)) => cli::gen_completions(sub_matches),
         // If all subcommands are defined above, anything else is unreachabe!()
         (_, None) => unreachable!(),
